@@ -18,10 +18,7 @@ components:{
     tabbar
 },
 methods: {
-
-},
-created() {
-
+    
 },
 }
 </script>

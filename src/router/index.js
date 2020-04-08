@@ -34,18 +34,14 @@ const routes = [
         component:()=> import('@/views/son')
       }
     ]
-  },
-  
-{
-  path: '/index',
-  name: 'index',
-  component: App,
-  component: ()=> import('@/views/index'),
-},
-]
+  }]
 
 const router = new VueRouter({
   routes
 })
-
+router.beforeEach((to,from,next)=>{
+  console.log(to)
+  console.log(from)
+  next()
+})
 export default router

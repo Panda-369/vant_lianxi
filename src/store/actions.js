@@ -1,5 +1,11 @@
+import {LOGIN} from './type'
 export default {
-    login(){
-        
+    // async login({commit},param){  //异步调用
+    //     commit(LOGIN,await login(param).then((res)=>{
+    //         return res
+    //     }))
+    // },
+    login({commit},param){
+        commit(LOGIN,param)  
     }
 }

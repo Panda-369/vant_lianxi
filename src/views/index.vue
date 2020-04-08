@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :title="'主页'"/>
-    <p @click="goson">子页面</p>
+    <p @click="goson">{{$store.state.country}}</p>
     <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
       <div v-for="(item,index) in list" :key="index">
         <van-image width="170"  height="170" style="margin-top:20px;" lazy-load :src="item.goods.goods.images+'?x-oss-process=image/resize,s_250'" />
@@ -16,10 +16,9 @@
 import Header from '@/components/header'
 import Vue from 'vue';
 import { Lazyload } from 'vant';
-
 Vue.use(Lazyload);
+import {mapActions,mapState} from 'vuex'
 import { getColumnGoodsPageList } from "../config/request";
-import { mapState, mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -35,14 +34,14 @@ export default {
   components:{
     Header
   },
-  created() {},
-  computed: {
-    ...mapState(["country"])
+  created() {
+    this.login('中国')
   },
   mounted(){
     window.addEventListener('scroll', this.windowScroll)
   },
   methods: {
+    ...mapActions(['login']),
     goson(){
       this.$router.push({
         name:'son',
@@ -51,7 +50,6 @@ export default {
         }
       })
     },
-    ...mapActions(["login"]),
     onLoad() {
       let params = {
         token:

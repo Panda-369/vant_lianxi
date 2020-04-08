@@ -13,6 +13,9 @@ export default {
   components:{
     tabbar
   },
+  created(){
+    console.log(process.env.NODE_ENV)
+  }
 }
 </script>
 <style lang="scss">

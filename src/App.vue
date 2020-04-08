@@ -1,17 +1,14 @@
 <template>
 <div>
-  <div id="app" style="margin-bottom:50px">
+  <div id="app">
     <router-view/>
   </div>
-  <tabbar />
 </div>
   
 </template>
 <script>
-import tabbar from './components/tabbar'
 export default {
   components:{
-    tabbar
   },
   created(){
     console.log(process.env.NODE_ENV)

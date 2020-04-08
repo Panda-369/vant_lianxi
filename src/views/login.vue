@@ -1,14 +1,18 @@
-<!--  -->
+<!-- 登陆页面 -->
 <template>
-  <div class="aa">
-     <p>这是登录页面</p>
+  <div class="login">
+     <Header :title="'登录'" />
   </div>
 </template>
 
 <script>
+import Header from '@/components/header'
 export default {
   data() {
     return {};
+  },
+  components:{
+    Header
   },
   methods: {},
   created() {

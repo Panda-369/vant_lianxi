@@ -1,8 +1,7 @@
 <template>
   <div>
     <Header :title="'主页'"/>
-    <!-- <p class="animated bounceInDown" @click="gologin">这是主页</p>
-    <p class="animated bounceInDown">{{country}}</p>-->
+    <p @click="goson">子页面</p>
     <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
       <div v-for="(item,index) in list" :key="index">
         <van-image width="170"  height="170" style="margin-top:20px;" lazy-load :src="item.goods.goods.images+'?x-oss-process=image/resize,s_250'" />
@@ -44,10 +43,15 @@ export default {
     window.addEventListener('scroll', this.windowScroll)
   },
   methods: {
-    ...mapActions(["login"]),
-    gologin() {
-      this.login();
+    goson(){
+      this.$router.push({
+        name:'son',
+        params:{
+          id:1
+        }
+      })
     },
+    ...mapActions(["login"]),
     onLoad() {
       let params = {
         token:

@@ -7,14 +7,35 @@ const routes = [
   {
     path: '/',
     component: App,
-    redirect: '/index',
+    redirect: '/home',
+    children:[
+      {
+        path: '/home',
+        name: 'home',
+        redirect: '/index',
+        component: ()=> import('@/views/home'),
+        children:[
+          {
+            path: '/index',
+            name: 'index',
+            component: ()=> import('@/views/index'),
+          },
+          {
+            path: '/login',
+            name: 'login',
+            component: App,
+            component: ()=> import('@/views/login')
+          },
+        ]
+      },
+      {
+        path:'/son',
+        name:'son',
+        component:()=> import('@/views/son')
+      }
+    ]
   },
-  {
-  path: '/login',
-  name: 'login',
-  component: App,
-  component: ()=> import('@/views/login')
-},
+  
 {
   path: '/index',
   name: 'index',

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header :title="'主页'"/>
     <!-- <p class="animated bounceInDown" @click="gologin">这是主页</p>
     <p class="animated bounceInDown">{{country}}</p>-->
     <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
@@ -13,6 +14,7 @@
   </div>
 </template>
 <script>
+import Header from '@/components/header'
 import Vue from 'vue';
 import { Lazyload } from 'vant';
 
@@ -30,6 +32,9 @@ export default {
       showgotop:false,
       scrollTop:'',
     };
+  },
+  components:{
+    Header
   },
   created() {},
   computed: {

@@ -12,7 +12,7 @@ import axios from 'axios';
 Vue.prototype.axios=axios;
 Vue.use(Vant);
 import './config/rem'
-import animated from 'animate.css' 
+import animated from 'animate.css'  //animate.css动画样式
 Vue.use(animated)
 new Vue({
   router,

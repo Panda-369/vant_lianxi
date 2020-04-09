@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from '../App'
+import NProgress from 'nprogress' // 进度条
+import 'nprogress/nprogress.css'
+Vue.use(NProgress)
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,8 +43,10 @@ const router = new VueRouter({
   routes
 })
 router.beforeEach((to,from,next)=>{
-  console.log(to)
-  console.log(from)
+  NProgress.start() 
   next()
+})
+router.afterEach(() => {
+  NProgress.done()
 })
 export default router

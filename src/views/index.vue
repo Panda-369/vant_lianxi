@@ -13,6 +13,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 import Header from '@/components/header'
 import Vue from 'vue';
 import { Lazyload } from 'vant';

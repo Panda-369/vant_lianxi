@@ -90,10 +90,7 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-p {
-  font-size: 0.27rem;
-}
+<style lang="scss" scoped>
 .goTop{
   width: 1rem;
   height: 1rem;

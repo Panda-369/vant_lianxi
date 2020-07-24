@@ -1,3 +1,5 @@
 export default {
-    country:'中国'
+    shopCart:{
+        
+    }//购物车内容
 }

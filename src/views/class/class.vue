@@ -6,11 +6,13 @@
 -->
 <template>
 <div class='class'>
-    <p>分类页面</p>
+     <!-- 店铺列表 -->
+    <classShop />
 </div>
 </template>
 
 <script>
+import classShop from './component/classShop'
 export default {
 data() {
 return {
@@ -19,6 +21,9 @@ return {
 },
 methods: {
 
+},
+components:{
+    classShop
 },
 created() {
 

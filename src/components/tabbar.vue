@@ -8,9 +8,9 @@
 <div class=''>
     <van-tabbar v-model="active">
         <van-tabbar-item icon="home-o" to="/index">主页</van-tabbar-item>
-        <van-tabbar-item icon="search" to="/class">分类</van-tabbar-item>
-        <van-tabbar-item icon="friends-o" to="/shopCart">购物车</van-tabbar-item>
-        <van-tabbar-item icon="setting-o" to="/mine">我的</van-tabbar-item>
+        <van-tabbar-item icon="bars" to="/class">分类</van-tabbar-item>
+        <van-tabbar-item icon="cart" to="/shopCart">购物车</van-tabbar-item>
+        <van-tabbar-item icon="manager" to="/mine">我的</van-tabbar-item>
     </van-tabbar>
 </div>
 </template>
@@ -26,10 +26,32 @@ methods: {
 
 },
 created() {
-
+ 
+},
+watch: {
+    $route(to,from){
+          switch (to.path) {
+        case '/index':
+            this.active=0
+            break;
+        case '/class':
+            this.active=1
+            break;
+        case '/shopCart':
+            this.active=2
+            break;
+        case '/mine':
+            this.active=3
+            break;
+        default:
+            break;
+    }
+    }
 },
 }
 </script>
 <style lang='scss' scoped>
-
+p {
+  font-size: 0.27rem;
+}
 </style>

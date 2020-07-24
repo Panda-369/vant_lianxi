@@ -18,3 +18,10 @@ export const getColumnGoodsPageList = (param) => {
       data:qs.stringify(param)
     });
   }
+  export const getNearStoreList = (param) => {
+    return axios({
+      method: 'post',
+      url: 'https://alpha-waimai.fpwan.com/Mall/getClassifyGoodsList',
+      data:qs.stringify(param)
+    });
+  }

@@ -8,7 +8,7 @@
   
 </template>
 <script>
-import tabbar from './components/tabbar'
+import tabbar from '@/components/tabbar'
 export default {
   components:{
     tabbar

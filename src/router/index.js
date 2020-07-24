@@ -19,7 +19,25 @@ const routes = [
   path: '/index',
   name: 'index',
   component: App,
-  component: ()=> import('@/views/index'),
+  component: ()=> import('@/views/index/index'),
+},
+{
+  path: '/class',
+  name: 'class',
+  component: App,
+  component: ()=> import('@/views/class/class'),
+},
+{
+  path: '/shopCart',
+  name: 'shopCart',
+  component: App,
+  component: ()=> import('@/views/shopCart/shopCart'),
+},
+{
+  path: '/mine',
+  name: 'mine',
+  component: App,
+  component: ()=> import('@/views/mine/mine'),
 },
 ]
 

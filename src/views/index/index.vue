@@ -1,3 +1,10 @@
+
+<!--
+ * @Author: Panda
+ * @Description: 首页
+ * @FilePath: /src/views/index/index.vue
+ * @date:2020-07-23
+ -->
 <template>
   <div>
     <!-- <p class="animated bounceInDown" @click="gologin">这是主页</p>
@@ -17,7 +24,7 @@ import Vue from 'vue';
 import { Lazyload } from 'vant';
 
 Vue.use(Lazyload);
-import { getColumnGoodsPageList } from "../config/request";
+import { getColumnGoodsPageList } from "@/config/request";
 import { mapState, mapActions } from "vuex";
 export default {
   data() {

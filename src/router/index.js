@@ -26,11 +26,12 @@ const routes = [
   name: 'class',
   component: App,
   component: ()=> import('@/views/class/class'),
-  children:[{
-    path:'/class/detail',
-    name:'classDetail',
-    component:()=> import('@/views/class/detail')
-  }]
+},
+{
+  path:'/class/detail',
+  name:'classDetail',
+  component: App,
+  component:()=> import('@/views/class/detail')
 },
 {
   path: '/shopCart',

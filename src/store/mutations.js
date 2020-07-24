@@ -1,4 +1,4 @@
-import { ADD_GOODS ,INIT_SHOP_CART} from './mutation-type'
+import { ADD_GOODS ,INIT_SHOP_CART,DELETE_GOODS} from './mutation-type'
 
 export default {
     [ADD_GOODS](state,data) {  //添加购物车
@@ -25,6 +25,9 @@ export default {
          }else{
             state.shopCart={}
          }
-         
+    },
+    [DELETE_GOODS](state){
+        state.shopCart={}
+        localStorage.setItem('shopCart', JSON.stringify(state.shopCart))
     }
 }

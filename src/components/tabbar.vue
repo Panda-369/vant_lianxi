@@ -52,9 +52,6 @@ watch: {
 </script>
 <style lang='scss' scoped>
  .tabbar{
-     .van-tabbar{
-  z-index: 2200;
-     }
    
  }
 </style>

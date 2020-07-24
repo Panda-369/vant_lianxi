@@ -5,8 +5,8 @@
 * @date:2020-07-23
 -->
 <template>
-<div class=''>
-    <van-tabbar v-model="active">
+<div class='tabbar'>
+    <van-tabbar v-model="active" >
         <van-tabbar-item icon="home-o" to="/index">主页</van-tabbar-item>
         <van-tabbar-item icon="bars" to="/class">分类</van-tabbar-item>
         <van-tabbar-item icon="cart" to="/shopCart">购物车</van-tabbar-item>
@@ -51,7 +51,10 @@ watch: {
 }
 </script>
 <style lang='scss' scoped>
-p {
-  font-size: 0.27rem;
-}
+ .tabbar{
+     .van-tabbar{
+  z-index: 2200;
+     }
+   
+ }
 </style>

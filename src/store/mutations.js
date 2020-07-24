@@ -19,7 +19,7 @@ export default {
         }
         localStorage.setItem('shopCart', JSON.stringify(state.shopCart))
     },
-    [INIT_SHOP_CART](state,data){
+    [INIT_SHOP_CART](state){
          if(JSON.parse(localStorage.getItem('shopCart'))){
             state.shopCart=JSON.parse(localStorage.getItem('shopCart'))
          }else{

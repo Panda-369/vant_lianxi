@@ -74,6 +74,7 @@
 
 <script>
 import Vue from "vue";
+import bus from '@/config/utils'
 import { Lazyload } from "vant";
 Vue.use(Lazyload);
 import axios from "axios";
@@ -98,6 +99,7 @@ export default {
   computed: {
     ...mapState(["shopCart"]),
     cartnum(){
+      bus.$emit('LoadNUm') //更新购物车的徽标
       return this.cartList.length
     },
   },
@@ -132,7 +134,6 @@ export default {
     },
     changeNumber(value) {
       this.ADD_GOODS(value);
-      console.log(123)
       this.heavyLoad()
     },
     ...mapMutations(["ADD_GOODS","DELETE_GOODS"]),

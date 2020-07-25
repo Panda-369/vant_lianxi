@@ -7,26 +7,38 @@
 <template>
 <div class='tabbar'>
     <van-tabbar v-model="active" >
-        <van-tabbar-item icon="home-o" to="/index">主页</van-tabbar-item>
-        <van-tabbar-item icon="bars" to="/class">分类</van-tabbar-item>
-        <van-tabbar-item icon="cart" to="/shopCart">购物车</van-tabbar-item>
-        <van-tabbar-item icon="manager" to="/mine">我的</van-tabbar-item>
+        <van-tabbar-item icon="home-o" to="/index" :replace="true">主页</van-tabbar-item>
+        <van-tabbar-item icon="bars" to="/class" :replace="true">分类</van-tabbar-item>
+        <van-tabbar-item icon="cart" to="/shopCart" :badge="num" :replace="true" v-if="num>0">购物车</van-tabbar-item>
+        <van-tabbar-item icon="cart" to="/shopCart"  :replace="true" v-else>购物车</van-tabbar-item>
+        <van-tabbar-item icon="manager" to="/mine" :replace="true">我的</van-tabbar-item>
     </van-tabbar>
 </div>
 </template>
 
 <script>
+import bus from '@/config/utils'
+import { mapState } from 'vuex';
 export default {
 data() {
 return {
-    active:0
+    active:0,
+    num:''
 };
 },
 methods: {
 
 },
 created() {
- 
+    this.num=Object.keys(this.shopCart).length
+},
+mounted() {
+     bus.$on('LoadNUm',res=>{
+         this.num=Object.keys(this.shopCart).length
+    })
+},
+computed: {
+     ...mapState(["shopCart"]),
 },
 watch: {
     $route(to,from){

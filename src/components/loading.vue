@@ -28,9 +28,12 @@ created() {
 <style lang='scss' scoped>
  .loading{
      width: 100%;
+     position: fixed;
+     top: 0;
      background: #ffffff;   
      img{
          width: 100%;
+         margin-top: 40%;
      }
  }
 </style>

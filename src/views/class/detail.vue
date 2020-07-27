@@ -84,6 +84,7 @@ export default {
        this.DELETE_GOODS()
       this.cartList=[]
       this.list.CartNum=0
+      this.popopshow=false
     },
     showPopup() {
       this.popopshow = true;

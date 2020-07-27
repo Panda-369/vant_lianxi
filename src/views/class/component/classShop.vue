@@ -116,6 +116,7 @@ export default {
       this.List.forEach(element => {
         element.CartNum=0
       });
+      this.popopshow=false
     },
     heavyLoad() {
       this.cartList = [];

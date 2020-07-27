@@ -39,7 +39,8 @@
       <p class="clear" @click="deleteCart()">
         <van-icon name="delete" />清空购物车
       </p>
-      <div class="content" v-for="(item,index) in cartList" :key="index">
+      <van-empty image="error" description="购物车为空哦,快去添加吧!" v-if="cartList.length==0" />
+      <div class="content" v-for="(item,index) in cartList" :key="index" v-else>
         <div class="left">
           <van-image lazy-load :src="item.image" />
         </div>

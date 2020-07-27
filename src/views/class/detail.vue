@@ -94,7 +94,6 @@ export default {
     },
     changeNumber(item) {
       this.ADD_GOODS(item);
-      console.log(12313)
       this.heavyLoad();
     },
     heavyLoad() {
